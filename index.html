@@ -16,24 +16,25 @@
         }
         
         .slider-container {
-            max-width: 100%;
+            max-width: 800px; /* 고정 너비 설정 */
             position: relative;
             margin: auto;
-            height: 400px;
+            height: auto; /* 높이를 자동으로 설정 */
             overflow: hidden;
-            background-color: #f0f0f0; /* 배경색 추가 */
+            background-color: #f0f0f0;
         }
         
         .slide {
             display: none;
             width: 100%;
-            height: 100%;
+            height: auto; /* 높이를 자동으로 조절 */
+            text-align: center; /* 이미지 중앙 정렬 */
         }
         
         .slide img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain; /* cover에서 contain으로 변경 */
+            max-width: 100%;
+            height: auto; /* 원본 이미지 비율 유지 */
+            object-fit: none; /* object-fit 제거 */
         }
         
         .prev, .next {
@@ -80,29 +81,19 @@
         .active, .dot:hover {
             background-color: #717171;
         }
-        
-        .fade {
-            animation-name: fade;
-            animation-duration: 1.5s;
-        }
-        
-        @keyframes fade {
-            from {opacity: .4}
-            to {opacity: 1}
-        }
     </style>
 </head>
 <body>
     <div class="slider-container">
-        <div class="slide fade">
+        <div class="slide">
             <img src="1.png">
         </div>
         
-        <div class="slide fade">
+        <div class="slide">
             <img src="2.png">
         </div>
         
-        <div class="slide fade">
+        <div class="slide">
             <img src="3.png">
         </div>
         
@@ -154,4 +145,4 @@
         }
     </script>
 </body>
-</html> 
+</html>
